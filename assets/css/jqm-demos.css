@@ -17,8 +17,8 @@
 }
 .jqm-demos .jqm-header h2 img {
 	display: block;
-	width: 140px;
-	height: auto;
+	/* width: 140px; */
+	/* height: auto; */
 }
 .jqm-demos .jqm-header h2 > img {
 	display: inline-block;
