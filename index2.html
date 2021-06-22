@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSFoods Mobile Demos</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" class="jqm-demos jqm-home">
+
+	<div data-role="header" class="jqm-header">
+		<h2>CSFoods</h2>
+		
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Search</a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content jqm-content">
+
+		
+        
+        <div data-demo-html="true">
+		<h3>Stock Summary</h3>
+			<form>
+				<input data-type="search" id="searchForCollapsibleSetChildren">
+			</form>
+				<div data-role="collapsibleset" data-filter="true" data-children="&gt; div, &gt; div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+					<div data-role="collapsible" data-filtertext="Product Pen Pencil rubber Scale">
+						<h3>Product</h3>
+						<ul data-role="listview" data-inset="false">
+							<li data-filtertext="Product Pen">Pen</li>
+							<li data-filtertext="Product Pencil">Pencil</li>
+							<li data-filtertext="Product rubber">rubber</li>
+							<li data-filtertext="Product Scale">Scale</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-filtertext="Cars Acura Audi BMW Cadillac">
+						<h3>Product1</h3>
+						<ul data-role="listview" data-inset="false">
+							<li data-filtertext="Product1 Acura">Acura</li>
+							<li data-filtertext="Product1 Audi">Audi</li>
+							<li data-filtertext="Product1 BMW">BMW</li>
+							<li data-filtertext="Product1 Cadillac">Cadillac</li>
+						</ul>
+					</div>
+					<div data-role="collapsible" data-filtertext="Planets Earth Jupiter Mars Mercury">
+						<h3>Product2</h3>
+						<ul data-role="listview" data-inset="false">
+							<li data-filtertext="Planets Acura">Earth</li>
+							<li data-filtertext="Planets Jupiter">Jupiter</li>
+							<li data-filtertext="Planets Mars">Mars</li>
+							<li data-filtertext="Planets Mercury">Mercury</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+	</div><!-- /content -->
+	    <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" data-theme="a">
+	    	<ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+<li data-filtertext="demos homepage" data-icon="home"><a href=".././">Home</a></li>
+<li data-filtertext="introduction overview getting started"><a href="../intro/" data-ajax="false">Stock Summary</a></li>
+<li data-filtertext="buttons button markup buttonmarkup method anchor link button element"><a href="../button-markup/" data-ajax="false">Stock Request</a></li>
+<li data-filtertext="form button widget input button submit reset"><a href="../button/" data-ajax="false">Stock pending</a></li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+		    Catering
+		</a>
+	</h3>
+	
+</li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+			Order Delivery
+		</a>
+	</h3>
+	
+</li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+			Order Picking
+		</a>
+	</h3>
+	
+</li>
+
+
+
+
+		     </ul>
+		</div><!-- /panel -->
+
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
+		<p>CSFoods Mobile Demos version <span class="jqm-version"></span></p>
+		<p>Copyright 2014 The jQuery Foundation</p>
+	</div><!-- /footer -->
+	<!-- TODO: This should become an external panel so we can add input to markup (unique ID) -->
+    <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay" data-theme="a">
+		<div class="jqm-search">
+			<ul class="jqm-list ui-nodisc-icon">
+<li data-filtertext="demos homepage" data-icon="home"><a href=".././">Home</a></li>
+<li data-filtertext="introduction overview getting started"><a href="../intro/" data-ajax="false">Stock Summary</a></li>
+<li data-filtertext="buttons button markup buttonmarkup method anchor link button element"><a href="../button-markup/" data-ajax="false">Stock Request</a></li>
+<li data-filtertext="form button widget input button submit reset"><a href="../button/" data-ajax="false">Stock pending</a></li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+		    Catering
+		</a>
+	</h3>
+	
+</li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+			Order Delivery
+		</a>
+	</h3>
+	
+</li>
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+			Order Picking
+		</a>
+	</h3>
+	
+</li>
+
+
+
+
+		     </ul>
+		</div>
+	</div><!-- /panel -->
+
+
+</div><!-- /page -->
+
+</body>
+</html>
