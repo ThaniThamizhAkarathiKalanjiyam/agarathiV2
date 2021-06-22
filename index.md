@@ -1,10 +1,8 @@
-## Welcome to GitHub Pages
+## தமிழில் புதிய சொற்களை உருவாக்கும் மென்பொருள்
 
-You can use the [editor on GitHub](https://github.com/ThaniThamizhAkarathiKalanjiyam/agarathiV2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+இந்தப் பக்கத்தைப் பயன் படுத்தி தமிழில் புதிய புதிய சொற்களை உருவாக்கலாம்.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+###  புதிய சொல்லின்  எழுத்துக்கள்  புதிய சொல்லின்  எழுத்துக்கள்  எண்ணிக்கை?
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
