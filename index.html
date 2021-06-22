@@ -16,6 +16,7 @@
 	text-align: center;
 }
 </style>
+
 </head>
 <body>
 
@@ -28,7 +29,7 @@
 	<div role="main" class="ui-content">
 	<form>
 		<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-		    <legend>சொல் எழுத்துக்களின் எண்ணிக்கை:</legend>
+		    <legend>எழுத்துக்களின் எண்ணிக்கை:</legend>
 				<input type="radio" name="radWordLength" id="radWordLength1" value="1" checked="checked">
 				<label for="radWordLength1">1</label>
 				<input type="radio" name="radWordLength" id="radWordLength2" value="2">
@@ -66,6 +67,22 @@
 	
 	</div><!-- /footer -->
 </div><!-- /page -->
+<script>
 
+
+$(document).ready(function(){
+
+
+$("input[name=radWordLength]").click(function(event){
+var target = event.target.id;
+alert ("H i all",target);
+
+});
+
+
+});
+
+
+</script>
 </body>
 </html>
