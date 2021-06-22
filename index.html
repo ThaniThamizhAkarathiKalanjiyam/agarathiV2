@@ -1,49 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<title>Page Title</title>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>சொல் உருவாக்கி</title>
-	<link rel="shortcut icon" href="favicon.png">
-	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.min.css">
-	<!-- <link rel="stylesheet" href="assets/css/jqm-demos.css"> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<script src="js/jquery.js"></script>
-	<!-- <script src="assets/js/index.js"></script> -->
-	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.css" />
+	<script src="http://code.jquery.com/jquery-[version].min.js"></script>
+	<script src="http://code.jquery.com/mobile/[version]/jquery.mobile-[version].min.js"></script>
 </head>
 <body>
-<div data-role="page" class="jqm-demos jqm-home">
 
+<div data-role="page">
 
+	<div data-role="header">
+		<h1>Page Title</h1>
+	</div><!-- /header -->
 
-	<div role="main" class="ui-content jqm-content">
-
-		<h1>சொல் உருவாக்கி</h1>
-
-		<p><strong>இந்தப் பக்கத்தை பயன்படுத்தி தமிழில் புதிய சொற்களை உருவாக்க முடியும். தமிழின் இலக்கண விதிமுறைகளைப் பயன்படுத்தி புதிய சொற்களை உருவாக்குவது மிகு சுலபம். இதனை நடைமுறைப் படுத்தும் முயற்சியே இந்தப் பக்கம்.</strong></p>
-
-<form>
-<div class="ui-field-contain">
-    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-        <legend>சொல் எழுத்துக்களின் எண்ணிக்கை:</legend>
-        <input type="radio" id="rad1" value="on" checked="checked">
-        <label for="rad2">1</label>
-        <input type="radio" id="rad2" value="off">
-        <label for="rad3">2</label>
-        <input type="radio" id="rad3" value="other">
-        <label for="radio-choice-h-5c">3</label>
-    </fieldset>
-</div>
-</form>
-	   
+	<div role="main" class="ui-content">
+		<p>Page content goes here.</p>
 	</div><!-- /content -->
-	
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
-		<p>சொல் உருவாக்கி version <span class="jqm-version"></span></p>
-		<p>Copyright 2016 - 2020 Pitchaimuthu</p>
-	</div><!-- /footer -->
 
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
 </div><!-- /page -->
 
 </body>
