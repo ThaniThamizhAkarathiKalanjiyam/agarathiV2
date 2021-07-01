@@ -35,18 +35,36 @@ $(document).ready(function () {
 
     $("#sel_edhugai_letter").on("change", function () {
 
-        var MayankuMeykal = tamil_lettersJSON.MayankuMeykal;
-
         var edhukai_letter = $("#sel_edhugai_letter").val();
-		
+        var MayankuMeykal = getMayankuMey(edhukai_letter);
+        $('#sel_edhugai_letter').empty();
+        $.each(MayankuMeykal, function (index, value) {
+
+            $('#sel_edhugai_letter').append($('<option>', {
+                    value: value,
+                    text: value
+                }));
+        });
+
     });
+
+    getMayankuMey = function (ninraMey) {
+        var MayankuMey = [];
+        $.each(MayankuMeykal, function (index, value) {
+            if (value.ninraMey === edhukai_letter) {
+                MayankuMey = value.MayankuMey
+            }
+        });
+
+        return MayankuMey;
+    }
 
     createRandomWords = function () {
 
         var lengthOfWord = (parseInt($("#lengthOfWord").val()) + 1)
         var thead_row = $("<tr>")
             $("#theadGeneratedWords").empty();
-        for (var i = 0; i<lengthOfWord; i++) {
+        for (var i = 0; i < lengthOfWord; i++) {
             if (i === 0) {
                 thead_row.append('<th scope="col">#</th>')
             } else if (i === 1) {
@@ -93,9 +111,9 @@ $(document).ready(function () {
 
             $.each(gen_Words, function (index, value) {
                 var link = $("<a>");
-                link.attr("target","_blank");
-                link.attr("href","https: //thanithamizhakarathikalanjiyam.github.io/?q="+ value.word);
-                link.text(value.word +"|");
+                link.attr("target", "_blank");
+                link.attr("href", "https: //thanithamizhakarathikalanjiyam.github.io/?q=" + value.word);
+                link.text(value.word + "|");
                 $("#tabGeneratedWords").append(link);
             })
 
@@ -106,7 +124,7 @@ $(document).ready(function () {
             tam_first_letters = tamil_lettersJSON.tam_first_letters
         }
 
-        if (tam_last_letters === null || tam_last_letters === undefined || tam_last_letters[0] ==="") {
+        if (tam_last_letters === null || tam_last_letters === undefined || tam_last_letters[0] === "") {
             tam_last_letters = tamil_lettersJSON.tam_last_letters
         }
         if (wordLettersCount === null || wordLettersCount === undefined) {
@@ -134,8 +152,8 @@ $(document).ready(function () {
         $.each(generatdWord, function (index, value) {
             if (value.letters.length !== wordLettersCount) {
                 var emptySpaceNeeded = wordLettersCount - value.letters.length;
-                for (j = 0; j<emptySpaceNeeded; j++) {
-                    generatdWord[index].letters.splice(1, 0,"H")
+                for (j = 0; j < emptySpaceNeeded; j++) {
+                    generatdWord[index].letters.splice(1, 0, "H")
                 }
             }
         });
