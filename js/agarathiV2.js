@@ -37,10 +37,10 @@ $(document).ready(function () {
 
         var edhukai_letter = $("#sel_edhugai_letter").val();
         var MayankuMeykal = getMayankuMey(edhukai_letter);
-        $('#sel_edhugai_letter').empty();
+        $('#sel_last_letter').empty();
         $.each(MayankuMeykal, function (index, value) {
 
-            $('#sel_edhugai_letter').append($('<option>', {
+            $('#sel_last_letter').append($('<option>', {
                     value: value,
                     text: value
                 }));
