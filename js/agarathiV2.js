@@ -43,39 +43,39 @@ $(document).ready(function () {
 
     createRandomWords = function () {
 
-        var lengthOfWord = (parseInt($(" # lengthOfWord ").val()) + 1)
-        var thead_row = $(" < tr > ")
-            $(" # theadGeneratedWords ").empty();
+        var lengthOfWord = (parseInt($("#lengthOfWord").val()) + 1)
+        var thead_row = $(" < tr >")
+            $("#theadGeneratedWords").empty();
         for (var i = 0; i < lengthOfWord; i++) {
             if (i === 0) {
-                thead_row.append('<th scope=" col ">#</th>')
+                thead_row.append('<th scope="col">#</th>')
             } else if (i === 1) {
-                thead_row.append('<th scope=" col ">முதல்</th>')
+                thead_row.append('<th scope="col">முதல்</th>')
             } else if (i === (lengthOfWord - 1)) {
-                thead_row.append('<th scope=" col ">இறுதி</th>')
+                thead_row.append('<th scope="col">இறுதி</th>')
             } else {
                 var colSpanInt = lengthOfWord - 3;
-                thead_row.append('<th scope=" col " colspan=' + colSpanInt + '>இடை</th>')
+                thead_row.append('<th scope="col" colspan=' + colSpanInt + '>இடை</th>')
                 i = (lengthOfWord - 2);
             }
         }
-        $(" # theadGeneratedWords ").append(thead_row);
+        $("#theadGeneratedWords").append(thead_row);
 
         var gen_Words = getGeneratedWords(
                 [
-                    $(" # sel_first_letter ").val()
+                    $("#sel_first_letter").val()
                 ],
                 [
-                    $(" # sel_last_letter ").val()
-                ], $(" # lengthOfWord ").val())
+                    $("#sel_last_letter").val()
+                ], $("#lengthOfWord").val())
 
             $.each(gen_Words, function (index, value) {
-                thead_row = $(" < tr > ")
+                thead_row = $(" < tr >")
                     thead_row.append('<td>' + value.word + '</td>')
                     $.each(value.letters, function (letter_index, letter_value) {
                         thead_row.append('<td>' + letter_value + '</td>')
                     });
-                $(" # tbodyGeneratedWords ").append(thead_row);
+                $("#tbodyGeneratedWords").append(thead_row);
             })
 
     }
@@ -84,18 +84,18 @@ $(document).ready(function () {
 
         var gen_Words = getGeneratedWords(
                 [
-                    $(" # sel_first_letter ").val()
+                    $("#sel_first_letter").val()
                 ],
                 [
-                    $(" # sel_last_letter ").val()
-                ], $(" # lengthOfWord ").val())
-            $(" # tabGeneratedWords ").empty()
+                    $("#sel_last_letter").val()
+                ], $("#lengthOfWord").val())
+            $("#tabGeneratedWords").empty()
 
             $.each(gen_Words, function (index, value) {
-                var link = $(" < a > ");
-                link.attr(" target ", " _blank ");
-                link.attr(" href ", " https: //thanithamizhakarathikalanjiyam.github.io/?q=" + value.word);
-                link.text(value.word + " | ");
+                var link = $(" < a >");
+                link.attr(" target ", " _blank");
+                link.attr(" href ", " https: //thanithamizhakarathikalanjiyam.github.io/?q="+ value.word);
+                link.text(value.word + " |");
                 $("#tabGeneratedWords").append(link);
             })
 
