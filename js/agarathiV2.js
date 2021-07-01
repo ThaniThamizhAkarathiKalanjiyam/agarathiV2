@@ -51,7 +51,7 @@ $(document).ready(function () {
     getMayankuMey = function (ninraMey) {
         var MayankuMey = [];
         $.each(tamil_lettersJSON.MayankuMeykal, function (index, value) {
-            if (value.ninraMey === edhukai_letter) {
+            if (value.ninraMey === ninraMey) {
                 MayankuMey = value.MayankuMey
             }
         });
