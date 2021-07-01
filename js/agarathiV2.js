@@ -21,7 +21,7 @@ $(document).ready(function () {
                     }));
             });
 			
-			$.each(ResponseJsonE.tam_uyir_mey_letters, function (index, value) {
+			$.each(ResponseJsonE.tam_mey_plus_uyirmey_letters, function (index, value) {
 
                 $('#sel_edhugai_letter').append($('<option>', {
                         value: value,
