@@ -1,120 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta charset="utf-8" />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="https://jtable.org/Scripts/jtable/themes/metro/blue/jtable.css">
-
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous" />
+    <link rel="stylesheet"
+    href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    crossorigin="anonymous" />
     <title>சொல் உருவாக்கி</title>
   </head>
   <body>
-    <div class="container">
-  <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="https://thanithamizhakarathikalanjiyam.github.io/images/ttak-62.png" alt="" width="72" height="72">
-    <h2>சொல் உருவாக்கி</h2>
-    <p class="lead">இந்தப் பக்கத்தை பயன்படுத்தி தமிழில் புதிய சொற்களை உருவாக்க முடியும். தமிழின் இலக்கண விதிமுறைகளைப் பயன்படுத்தி புதிய சொற்களை உருவாக்குவது மிகு சுலபம்.</p>
-  </div>
-
-  <div class="row">
-    <div class="col-md-8 order-md-1">
-	 <h4 class="mb-3">உருவாக்கும் சொல்</h4>
-	  <div class="row">
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4"
+      src="https://thanithamizhakarathikalanjiyam.github.io/images/ttak-62.png"
+      alt="" width="72" height="72" />
+      <h2>சொல் உருவாக்கி</h2>
+      <p class="lead">இந்தப் பக்கத்தை
+      பயன்படுத்தி தமிழில்
+      புதிய சொற்களை
+      உருவாக்க முடியும்.
+      தமிழின் இலக்கண
+      விதிமுறைகளைப்
+      பயன்படுத்தி புதிய
+      சொற்களை உருவாக்குவது
+      மிகு சுலபம்.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">உருவாக்கும்
+        சொல்</h4>
+        <div class="row">
           <div class="col-md-5 mb-3">
-            <label for="country">முதல் எழுத்து</label>
-            <select class="custom-select d-block w-100" id="sel_first_letter" required></select>
-            <div class="invalid-feedback">
-              Please select a valid first letter.
-            </div>
-          </div>
+          <label for="country">முதல்
+          எழுத்து</label> 
+          <select class="custom-select d-block w-100"
+          id="sel_first_letter" required=""></select>
+          <div class="invalid-feedback">Please select a valid first
+          letter.</div></div>
           <div class="col-md-4 mb-3">
-            <label for="state">இறுதி எழுத்து</label>
-            <select class="custom-select d-block w-100" id="sel_last_letter" required></select>
-            <div class="invalid-feedback">
-              Please provide a valid last letter.
-            </div>
-          </div>
+          <label for="state">இறுதி
+          எழுத்து</label> 
+          <select class="custom-select d-block w-100"
+          id="sel_last_letter" required=""></select>
+          <div class="invalid-feedback">Please provide a valid last
+          letter.</div></div>
           <div class="col-md-3 mb-3">
-            <label for="zip">எண்ணிக்கை</label>
-            <input type="number" class="form-control" id="zip" placeholder="எழுத்து எண்ணிக்கை" required>
-            <div class="invalid-feedback">
-              Zip code required.
+          <label for="zip">எண்ணிக்கை</label> 
+          <input type="number" class="form-control" id="zip"
+          placeholder="எழுத்து எண்ணிக்கை"
+          required="" />
+          <div class="invalid-feedback">Zip code
+          required.</div></div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block">உருவாக்கு</button>
+        <div id="MyTableContainer"></div>
+      </div>
+      <div class="col-md-4 order-md-2 mb-4">
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+              <th>Column 1</th>
+              <th>Column 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1 Data 1</td>
+              <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+              <td>Row 2 Data 1</td>
+              <td>Row 2 Data 2</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your cart</span> 
+        <span class="badge badge-secondary badge-pill">3</span></h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+            <div>
+              <h6 class="my-0">Product name</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$12</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+            <div>
+              <h6 class="my-0">Second product</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$8</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+
+            <div>
+              <h6 class="my-0">Third item</h6>
+              <small class="text-muted">Brief description</small>
+            </div>
+            <span class="text-muted">$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+
+            <div class="text-success">
+              <h6 class="my-0">Promo code</h6>
+              <small>EXAMPLECODE</small>
+            </div>
+            <span class="text-success">-$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span> 
+          <strong>$20</strong></li>
+        </ul>
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control"
+            placeholder="Promo code" />
+            <div class="input-group-append">
+              <button type="submit"
+              class="btn btn-secondary">Redeem</button>
             </div>
           </div>
-        </div>
-        
-        <button class="btn btn-primary btn-lg btn-block">உருவாக்கு </button>
-     
-	 <div id="MyTableContainer"></div>
+        </form>
+      </div>
     </div>
-  
-    <div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill">3</span>
-      </h4>
-      <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$12</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
-            <small>EXAMPLECODE</small>
-          </div>
-          <span class="text-success">-$5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>$20</strong>
-        </li>
-      </ul>
-
-      <form class="card p-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </div>
-      </form>
-    </div>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+    Word Creator (சொல் உருவாக்கி) by
+    Pitchaimuthu Muthaiya to Tamil-World | Idea Ignited by
+    Tholkappiyar &amp; Pavanathiyar</footer>
   </div>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-   Word Creator (சொல் உருவாக்கி) by Pitchaimuthu Muthaiya to Tamil-World | Idea Ignited by Tholkappiyar & Pavanathiyar
-</div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	 <script src="https://thanithamizhakarathikalanjiyam.github.io/ttakJs/agarathiV2.js" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js" integrity="sha256-UezNdLBLZaG/YoRcr48I68gr8pb5gyTBM+di5P8p6t8=" crossorigin="anonymous"></script>
-	<script src="https://jtable.org/Scripts/jquery-ui-1.10.0.min.js"></script>
-	<script src="https://jtable.org/Scripts/jtable/jquery.jtable.js"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+crossorigin="anonymous"></script> 
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+crossorigin="anonymous"></script> 
+  <script src="https://thanithamizhakarathikalanjiyam.github.io/ttakJs/agarathiV2.js"
+crossorigin="anonymous"></script> 
+  <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+crossorigin="anonymous"></script></body>
 </html>
