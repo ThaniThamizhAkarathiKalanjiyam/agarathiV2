@@ -119,7 +119,7 @@ $(document).ready(function () {
 
     }
 
-    getGeneratedWords = function (tam_first_letters, tam_last_letters, wordLettersCount) {
+    getGeneratedWords = function (tam_first_letters, tam_last_letters, wordLettersCount, edhukai_letters) {
         if (tam_first_letters === null || tam_first_letters === undefined) {
             tam_first_letters = tamil_lettersJSON.tam_first_letters
         }
@@ -129,6 +129,18 @@ $(document).ready(function () {
         }
         if (wordLettersCount === null || wordLettersCount === undefined) {
             wordLettersCount = 2
+        }
+        if (edhukai_letters === null || edhukai_letters === undefined) {
+            edhukai_letters = tamil_lettersJSON.tam_mey_plus_uyirmey_letters
+        }
+
+        if (wordLettersCount === 3) {
+            $.each(tam_first_letters, function (index, first_letter) {
+                $.each(edhukai_letters, function (index, edhukai_letter) {
+					first_letter = first_letter + edhukai_letter;
+				});
+            });
+			console.log(tam_first_letters)
         }
 
         var generatdWord = [];
