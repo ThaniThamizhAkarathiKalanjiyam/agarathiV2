@@ -84,7 +84,7 @@ $(document).ready(function () {
 		$('#MyTableContainer').jtable("load");
 
     });
-	$('#sel_first_letter').on("change", function () {
+	$('#sel_first_letter,#sel_last_letter').on("change", function () {
 
         $('#MyTableContainer').jtable("load");
 

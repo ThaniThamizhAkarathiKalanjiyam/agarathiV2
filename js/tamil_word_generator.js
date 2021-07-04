@@ -2203,6 +2203,7 @@ $(document).ready(function () {
 
                 $.each(tam_last_letters, function (index, last_letter) {
                     var generatdWordLetters = [];
+					
                     generatdWordLetters.push(first_letter);
                     generatdWordLetters.push(last_letter);
 
