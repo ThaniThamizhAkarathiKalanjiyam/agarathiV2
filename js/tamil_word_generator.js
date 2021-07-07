@@ -1,6 +1,6 @@
 $(document).ready(function () {
-	
-	tamil_lettersJSON = {
+
+    tamil_lettersJSON = {
         "tam_letters": [
             "ஃ",
             "அ",
@@ -2163,7 +2163,7 @@ $(document).ready(function () {
             "னோ",
             "னௌ"
         ],
-        getMayankuMey : function (ninraMey) {
+        getMayankuMey: function (ninraMey) {
             var MayankuMey = [];
             $.each(tamil_lettersJSON.MayankuMeykal, function (index, value) {
                 if (value.ninraMey === ninraMey) {
@@ -2173,62 +2173,95 @@ $(document).ready(function () {
 
             return MayankuMey;
         },
-        getGeneratedWords : function (tam_first_letters, edhukai_letters, tam_last_letters, wordLettersCount) {
-            if (tam_first_letters === null || tam_first_letters === undefined) {
-                tam_first_letters = tamil_lettersJSON.tam_first_letters
-            }
+        getGeneratedWords: function (funcData) {
 
-            if (tam_last_letters === null || tam_last_letters === undefined || tam_last_letters[0] === "") {
-                tam_last_letters = tamil_lettersJSON.tam_last_letters
-            }
-            if (wordLettersCount === null || wordLettersCount === undefined) {
-                wordLettersCount = 2
-            }
-            if (edhukai_letters === null || edhukai_letters === undefined) {
-                edhukai_letters = tamil_lettersJSON.tam_mey_plus_uyirmey_letters
-            }
+            tam_first_letters = funcData.tam_first_letters
+                edhukai_letters = funcData.edhukai_letters
+                tam_last_letters = funcData.tam_last_letters
+                wordLettersCount = funcData.wordLettersCount
+                jtParams = funcData.jtParams
 
-            if (wordLettersCount === 3) {
-                $.each(tam_first_letters, function (index, first_letter) {
-                    $.each(edhukai_letters, function (index, edhukai_letter) {
-                        first_letter = first_letter + edhukai_letter;
-                    });
-                });
-                console.log(tam_first_letters)
-            }
+                if (jtParams === null || jtParams === undefined) {
+                    jtParams = {}
+                    jtParams.jtStartIndex = 0
+                        jtParams.jtPageSize = 10
+                }
 
-            var generatdWord = [];
+                if (tam_first_letters === null || tam_first_letters === undefined || tam_first_letters[0] === "") {
+                    tam_first_letters = tamil_lettersJSON.tam_first_letters
 
-            $.each(tam_first_letters, function (index, first_letter) {
+                }
 
-                $.each(tam_last_letters, function (index, last_letter) {
-                    var generatdWordLetters = [];
-					
-                    generatdWordLetters.push(first_letter);
-                    generatdWordLetters.push(last_letter);
+                if (tam_last_letters === null || tam_last_letters === undefined || tam_last_letters[0] === "") {
+                    tam_last_letters = tamil_lettersJSON.tam_last_letters
 
-                    generatdWord.push({
-                        word: generatdWordLetters.join(""),
-                        letters: generatdWordLetters
+                }
+
+                if (edhukai_letters === null || edhukai_letters === undefined || edhukai_letters[0] === "" || edhukai_letters[0] === "அனைத்தும்") {
+                    edhukai_letters = tamil_lettersJSON.tam_mey_plus_uyirmey_letters
+                }
+
+                var generatedWord = [];
+
+            $.each(tam_first_letters, function (index_first_letter, first_letter) {
+
+                $.each(tam_last_letters, function (index_last_letter, last_letter) {
+                    var generatedWordLetters = [];
+                    generatedWordLetters.push(first_letter);
+                    //generatedWordLetters.push("");
+                    generatedWordLetters.push(last_letter);
+
+                    generatedWord.push({
+                        first_letter: first_letter,
+                        //edhukai_letter:"",
+                        last_letter: last_letter,
+                        word: generatedWordLetters.join(""),
+                        letters: generatedWordLetters
                     })
                 });
 
             });
 
-            //Insert an empty space between last and first letter
-            $.each(generatdWord, function (index, value) {
-                if (value.letters.length !== wordLettersCount) {
-                    var emptySpaceNeeded = wordLettersCount - value.letters.length;
-                    for (j = 0; j < emptySpaceNeeded; j++) {
-                        generatdWord[index].letters.splice(1, 0, "H")
-                    }
-                }
-            });
+var generatedWord_length = generatedWord.length
+var generatedwordNew  = []
 
-            return generatdWord
+// if(edhukai_letters !== undefined && edhukai_letters.length !== 234 && edhukai_letters[0] !== "" && edhukai_letters[0].length > 0 && edhukai_letters[0] !== "அனைத்தும்")
+// {
+            // for (i = 0; i < generatedWord.length; i++) {
+				// debugger
+				 // console.log(generatedword[i])
+				 // console.log(generatedword[i].last_letter)
+                // for (j = 0; j < edhukai_letters; j++) {
+                     // edhukai_letter = edhukai_letters[j]
+					
+					// generatedwordNew.push({
+                        // first_letter: first_letter,
+                        // edhukai_letter: edhukai_letter,
+                        // last_letter: last_letter,
+                        // word: generatedWordLetters.join(""),
+                        // letters: generatedWordLetters
+                    // })
+                // }
+            // }
+			
+	// //generatedWord = generatedwordNew		
+// }
+
+            console.log("generatedWord", generatedWord)
+
+            generatedWordFiltered = []
+            console.log(generatedWord)
+            last_index = jtParams.jtStartIndex + jtParams.jtPageSize
+                for (i = jtParams.jtStartIndex; i <= last_index; i++) {
+                    generatedWordFiltered.push(generatedWord[i])
+                }
+
+                return {
+                "Result": "OK",
+                "Records": generatedWordFiltered,
+                "TotalRecordCount": generatedWord.length
+            };
         }
     }
-	
-	
-	
-	});
+
+});
